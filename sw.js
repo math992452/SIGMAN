@@ -1,10 +1,10 @@
-const CACHE_NAME = "sigman-cache-v2";
+const CACHE_NAME = "sigman-cache-v3";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css",
-  "./app.js",
-  "./manifest.json",
+  "./styles.css?v=3",
+  "./app.js?v=3",
+  "./manifest.json?v=3",
   "./assets/splash-mountain.png",
   "./assets/icon-180.png",
   "./assets/icon-192.png",
