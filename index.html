@@ -9,10 +9,10 @@
     <meta name="apple-mobile-web-app-title" content="SIGMAN" />
     <meta name="description" content="SIGMAN discipline tracker MVP" />
     <title>SIGMAN</title>
-    <link rel="manifest" href="manifest.json?v=3" />
+    <link rel="manifest" href="manifest.json?v=7" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/icon-192.png" />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=7" />
   </head>
   <body>
     <main class="phone-shell" aria-label="SIGMAN MVP">
@@ -28,37 +28,38 @@
       <section class="screen app-screen" data-screen="home">
         <header class="topbar">
           <div>
-            <span class="eyebrow">&#20170;&#26085;&#29376;&#24907;</span>
+            <span class="eyebrow">&#36899;&#32396;&#22533;&#25345;&#20013;</span>
             <h2>SIGMAN</h2>
           </div>
-          <button class="icon-btn" data-open-setup aria-label="Settings">&#9881;</button>
+          <button class="icon-btn" data-go="setup" data-nav="setup" aria-label="Settings">&#9881;</button>
         </header>
 
-        <div class="content">
-          <section class="streak-card">
-            <div class="ring" id="ring">
-              <span>&#36899;&#32396;&#22533;&#25345;</span>
-              <strong id="streakDays">0</strong>
-              <small>&#22825;</small>
+        <div class="content home-content">
+          <section class="streak-hero">
+            <span class="eyebrow">&#30446;&#21069;&#32000;&#37636;</span>
+            <div class="day-number">
+              <strong id="streakDays">1</strong>
+              <span>&#22825;</span>
             </div>
-            <div class="streak-meta">
-              <span>&#38283;&#22987;&#26085;&#26399;</span>
-              <strong id="startDateLabel">&#20170;&#22825;</strong>
-              <span>&#26368;&#20339;&#32000;&#37636;</span>
-              <strong id="bestDays">0 &#22825;</strong>
+            <p id="homeMessage">&#20170;&#22825;&#21482;&#38656;&#35201;&#23432;&#20303;&#20170;&#22825;&#12290;</p>
+            <div class="metric-row">
+              <span>&#38283;&#22987;&#26085;&#26399; <b id="startDateLabel">--</b></span>
+              <span>&#26368;&#20339;&#32000;&#37636; <b id="bestDays">1 &#22825;</b></span>
             </div>
-            <blockquote>
-              &#19981;&#38752;&#24773;&#32210;&#25744;&#20303;&#65292;&#38752;&#31995;&#32113;&#25744;&#20303;&#12290;
-              <cite id="reasonLabel">&#25105;&#30340;&#29702;&#30001;&#36996;&#27794;&#35373;&#23450;</cite>
-            </blockquote>
           </section>
 
-          <section class="rescue-strip">
+          <button class="reason-card" data-go="setup" data-nav="setup">
+            <span class="eyebrow">&#25105;&#30340;&#29702;&#30001;</span>
+            <strong id="reasonLabel">&#35373;&#23450;&#19968;&#20491;&#20320;&#19981;&#24819;&#20013;&#26039;&#32000;&#37636;&#30340;&#29702;&#30001;&#12290;</strong>
+          </button>
+
+          <section class="rescue-strip priority">
             <div>
               <span class="eyebrow">&#34909;&#21205;&#20358;&#35186;</span>
-              <h3>&#20808;&#25744;&#36942; 90 &#31186;</h3>
+              <h3>&#31435;&#21363;&#36914;&#20837; 90 &#31186;&#24613;&#25937;&#27969;&#31243;</h3>
+              <p>&#19981;&#35201;&#24613;&#33879;&#20570;&#27770;&#23450;&#12290;&#20808;&#25744;&#36942;&#36889;&#19968;&#27874;&#12290;</p>
             </div>
-            <button class="secondary-btn" data-go="rescue" data-nav="rescue">&#36914;&#20837;&#24613;&#25937;</button>
+            <button class="secondary-btn" data-go="rescue" data-nav="rescue">&#38283;&#22987;&#24613;&#25937;</button>
           </section>
 
           <section class="task-panel">
@@ -77,59 +78,83 @@
       <section class="screen app-screen" data-screen="rescue">
         <header class="detailbar">
           <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
-          <h2>&#34909;&#21205;&#24613;&#25937;</h2>
+          <h2>&#20572;&#19979;&#20358;&#65292;&#36681;&#31227;&#27880;&#24847;&#21147;</h2>
           <button class="icon-btn" data-reset-timer aria-label="Reset timer">&#8635;</button>
         </header>
 
         <div class="content rescue-content">
-          <section class="timer-card">
-            <span class="eyebrow">&#29694;&#22312;&#19981;&#35201;&#35527;&#24847;&#24535;&#21147;</span>
-            <h1>&#36681;&#31227;&#27880;&#24847;&#21147;</h1>
-            <div class="timer" id="timer">01:30</div>
-            <p id="rescuePrompt">&#25918;&#19979;&#25163;&#27231;&#65292;&#20808;&#20570; 10 &#27425;&#28145;&#21628;&#21560;&#12290;</p>
-            <button class="primary-btn" id="timerButton">&#38283;&#22987; 90 &#31186;</button>
+          <section class="timer-card" id="timerCard">
+            <span class="eyebrow">&#36984;&#25799;&#19968;&#20491;&#34892;&#21205;&#65292;&#25744;&#36942;&#36889;&#27874;&#34909;&#21205;</span>
+            <div class="timer" id="timer">90</div>
+            <span class="timer-unit">&#31186;</span>
+            <p id="rescuePrompt">&#20320;&#19981;&#38656;&#35201;&#35299;&#27770;&#19968;&#29983;&#65292;&#21482;&#38656;&#35201;&#25744;&#36942; 90 &#31186;&#12290;</p>
           </section>
 
           <section class="action-panel">
             <div class="section-head compact">
-              <h3>&#36984;&#19968;&#20491;&#31435;&#21051;&#34892;&#21205;</h3>
-              <span>&#19981;&#29992;&#23436;&#32654;&#65292;&#21482;&#35201;&#38626;&#38283;&#21050;&#28608;&#28304;</span>
+              <h3>&#31435;&#21363;&#34892;&#21205;</h3>
+              <span>&#29992;&#19968;&#20491;&#21205;&#20316;&#25130;&#26039;&#33258;&#21205;&#21453;&#25033;</span>
             </div>
             <div class="action-grid" id="actionGrid"></div>
           </section>
 
+          <section class="completion-card" id="completionCard" hidden>
+            <span class="eyebrow">&#24613;&#25937;&#23436;&#25104;</span>
+            <h3>&#20320;&#21083;&#21083;&#23432;&#20303;&#20102;&#19968;&#27425;&#12290;</h3>
+            <p id="completionText">&#36889;&#19968;&#27425;&#65292;&#32000;&#37636;&#20445;&#30041;&#19979;&#20358;&#20102;&#12290;</p>
+            <button class="secondary-btn" data-go="home" data-nav="home">&#22238;&#21040;&#39318;&#38913;</button>
+          </section>
+
           <button class="wide-action" id="surviveButton">&#25105;&#24050;&#28193;&#36942;&#36889;&#19968;&#21051;</button>
+          <button class="text-link" data-go="setup" data-nav="setup">&#25105;&#24050;&#32147;&#30772;&#25106;&#65292;&#38656;&#35201;&#37325;&#26032;&#38283;&#22987;</button>
         </div>
       </section>
 
       <section class="screen app-screen" data-screen="setup">
         <header class="detailbar">
           <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
-          <h2>&#26053;&#31243;&#35373;&#23450;</h2>
+          <h2>&#35373;&#23450;&#33287;&#32000;&#37636;</h2>
           <span></span>
         </header>
 
         <form class="content setup-form" id="setupForm">
-          <label>
-            <span>&#38283;&#22987;&#26085;&#26399;</span>
-            <input type="date" id="startDateInput" />
-          </label>
-          <label>
-            <span>&#25105;&#28858;&#20160;&#40636;&#35201;&#25106;</span>
-            <textarea id="reasonInput" rows="4" placeholder="&#20363;&#22914;&#65306;&#25105;&#35201;&#25226;&#27880;&#24847;&#21147;&#25343;&#22238;&#20358;&#65292;&#35722;&#25104;&#26356;&#31337;&#30340;&#20154;&#12290;"></textarea>
-          </label>
-          <button class="primary-btn" type="submit">&#20786;&#23384;&#35373;&#23450;</button>
-          <button class="danger-btn" type="button" id="relapseButton">&#20170;&#22825;&#30772;&#25106;&#65292;&#37325;&#26032;&#38283;&#22987;</button>
+          <section class="setting-card">
+            <span class="eyebrow">&#30446;&#21069;&#32000;&#37636;</span>
+            <div class="stats-grid">
+              <span>&#30446;&#21069;&#36899;&#32396;<b id="settingsStreak">1 &#22825;</b></span>
+              <span>&#38283;&#22987;&#26085;&#26399;<b id="settingsStartDate">--</b></span>
+              <span>&#26368;&#20339;&#32000;&#37636;<b id="settingsBest">1 &#22825;</b></span>
+              <span>&#24613;&#25937;&#23436;&#25104;<b id="settingsRescues">0 &#27425;</b></span>
+            </div>
+          </section>
+
+          <section class="setting-card">
+            <label>
+              <span>&#25105;&#30340;&#25106;&#33394;&#29702;&#30001;</span>
+              <textarea id="reasonInput" rows="4" maxlength="80" placeholder="&#20363;&#22914;&#65306;&#25105;&#35201;&#25226;&#27880;&#24847;&#21147;&#25343;&#22238;&#20358;&#65292;&#35731;&#29983;&#27963;&#37325;&#26032;&#31337;&#23450;&#12290;"></textarea>
+            </label>
+            <label>
+              <span>&#38283;&#22987;&#26085;&#26399;</span>
+              <input type="date" id="startDateInput" />
+            </label>
+            <button class="primary-btn" type="submit">&#20786;&#23384;&#35373;&#23450;</button>
+          </section>
+
+          <section class="setting-card muted-card">
+            <span class="eyebrow">&#37325;&#26032;&#38283;&#22987;</span>
+            <p>&#37325;&#26032;&#38283;&#22987;&#19981;&#26159;&#21542;&#23450;&#20043;&#21069;&#30340;&#21162;&#21147;&#12290;&#26368;&#20339;&#32000;&#37636;&#26371;&#20445;&#30041;&#12290;</p>
+            <button class="danger-btn" type="button" id="relapseButton">&#37325;&#26032;&#38283;&#22987;&#20170;&#22825;</button>
+          </section>
         </form>
       </section>
 
       <nav class="bottom-nav" hidden>
         <button class="active" data-go="home" data-nav="home"><span>&#8962;</span>&#39318;&#38913;</button>
-        <button data-go="home" data-nav="tasks" data-jump="tasks"><span>&#10003;</span>&#20219;&#21209;</button>
         <button data-go="rescue" data-nav="rescue"><span>&#9889;</span>&#24613;&#25937;</button>
+        <button data-go="setup" data-nav="setup"><span>&#9881;</span>&#35373;&#23450;</button>
       </nav>
     </main>
 
-    <script src="app.js?v=3"></script>
+    <script src="app.js?v=7"></script>
   </body>
 </html>

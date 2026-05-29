@@ -89,12 +89,16 @@ button {
 }
 
 .splash {
+  position: relative;
   flex-direction: column;
   align-items: center;
   text-align: center;
   overflow: auto;
   padding-top: clamp(96px, 21dvh, 204px);
   padding-bottom: calc(34px + env(safe-area-inset-bottom));
+  background:
+    linear-gradient(180deg, rgba(5, 6, 7, 0.72) 0%, rgba(5, 6, 7, 0.56) 34%, rgba(5, 6, 7, 0.34) 62%, rgba(5, 6, 7, 0.72) 100%),
+    url("assets/splash-wallpaper.png") center center / cover no-repeat;
 }
 
 .brand-mark {
@@ -133,12 +137,13 @@ button {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 110px;
-  height: 250px;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
   background:
-    linear-gradient(to bottom, rgba(5, 6, 7, 0), #050607 88%),
-    url("assets/splash-mountain.png") center bottom / cover no-repeat;
-  opacity: 0.88;
+    radial-gradient(circle at 50% 78%, rgba(226, 191, 145, 0.16), transparent 24%),
+    linear-gradient(180deg, rgba(5, 6, 7, 0.96), rgba(5, 6, 7, 0.2) 54%, rgba(5, 6, 7, 0.96));
+  opacity: 1;
 }
 
 .primary-btn,
@@ -165,6 +170,15 @@ button {
   max-width: 330px;
   margin-top: auto;
   margin-bottom: 0;
+}
+
+.splash .brand-mark,
+.splash h1,
+.splash .tagline,
+.splash .subline,
+.splash .primary-btn {
+  position: relative;
+  z-index: 1;
 }
 
 .secondary-btn {
@@ -231,6 +245,10 @@ button {
 }
 
 .streak-card,
+.streak-hero,
+.reason-card,
+.completion-card,
+.setting-card,
 .task-panel,
 .timer-card,
 .action-panel,
@@ -246,6 +264,82 @@ button {
   grid-template-columns: 1fr 104px;
   gap: 12px 20px;
   align-items: center;
+}
+
+.home-content {
+  padding-bottom: 20px;
+}
+
+.streak-hero {
+  padding: 22px;
+  text-align: center;
+}
+
+.day-number {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 4px;
+}
+
+.day-number strong {
+  font-size: 82px;
+  line-height: 0.95;
+  letter-spacing: 0;
+}
+
+.day-number span {
+  color: var(--gold);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.streak-hero p {
+  margin: 12px 0 0;
+  color: #e7e0d7;
+  line-height: 1.7;
+}
+
+.metric-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.metric-row span {
+  min-height: 54px;
+  display: grid;
+  place-items: center;
+  gap: 4px;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.045);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.16);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.metric-row b {
+  color: var(--text);
+  font-size: 15px;
+}
+
+.reason-card {
+  width: 100%;
+  margin-top: 14px;
+  padding: 16px;
+  display: block;
+  text-align: left;
+  background: linear-gradient(180deg, rgba(226, 191, 145, 0.1), rgba(255, 255, 255, 0.025));
+}
+
+.reason-card strong {
+  display: block;
+  margin-top: 6px;
+  color: #eee7dd;
+  line-height: 1.7;
 }
 
 .ring {
@@ -303,6 +397,21 @@ cite {
   align-items: center;
   justify-content: space-between;
   gap: 14px;
+}
+
+.rescue-strip.priority {
+  align-items: stretch;
+}
+
+.rescue-strip.priority div {
+  min-width: 0;
+}
+
+.rescue-strip.priority p {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .rescue-strip h3,
@@ -417,6 +526,13 @@ cite {
   letter-spacing: 1px;
 }
 
+.timer-unit {
+  display: block;
+  margin-top: -4px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
 .timer-card .primary-btn {
   margin-top: 18px;
 }
@@ -460,8 +576,68 @@ cite {
   margin-top: 20px;
 }
 
+.completion-card {
+  margin-top: 14px;
+  padding: 18px;
+  text-align: center;
+}
+
+.completion-card h3 {
+  margin: 8px 0 0;
+  font-size: 20px;
+}
+
+.completion-card p,
+.muted-card p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.completion-card .secondary-btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+.text-link {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px;
+  background: transparent;
+  color: #b78a7a;
+  font-size: 13px;
+}
+
 .setup-form {
   display: block;
+}
+
+.setting-card {
+  margin-bottom: 14px;
+  padding: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.stats-grid span {
+  min-height: 62px;
+  display: grid;
+  gap: 5px;
+  align-content: center;
+  padding: 10px;
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.16);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.stats-grid b {
+  color: var(--text);
+  font-size: 16px;
 }
 
 .setup-form label {
@@ -582,14 +758,21 @@ textarea:focus {
     font-size: 10px;
   }
 
-  .mountain {
-    bottom: 72px;
-    height: 210px;
-  }
-
   .streak-card {
     grid-template-columns: 1fr 96px;
     padding: 18px;
+  }
+
+  .day-number strong {
+    font-size: 74px;
+  }
+
+  .rescue-strip.priority {
+    display: grid;
+  }
+
+  .rescue-strip.priority .secondary-btn {
+    width: 100%;
   }
 
   .ring {
