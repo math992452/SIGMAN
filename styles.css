@@ -16,6 +16,15 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
+[hidden] {
+  display: none !important;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -42,7 +51,7 @@ button {
 .phone-shell {
   position: relative;
   width: min(100vw, 430px);
-  height: min(100vh, 900px);
+  height: min(100dvh, 900px);
   min-height: 760px;
   overflow: hidden;
   background: var(--bg);
@@ -68,16 +77,24 @@ button {
   position: absolute;
   inset: 0;
   display: none;
-  padding: 56px 24px 92px;
+  padding: calc(56px + env(safe-area-inset-top)) 24px calc(92px + env(safe-area-inset-bottom));
 }
 
 .screen.active {
   display: block;
 }
 
+.splash.screen.active {
+  display: flex;
+}
+
 .splash {
+  flex-direction: column;
+  align-items: center;
   text-align: center;
-  padding-top: 204px;
+  overflow: auto;
+  padding-top: clamp(96px, 21dvh, 204px);
+  padding-bottom: calc(34px + env(safe-area-inset-bottom));
 }
 
 .brand-mark {
@@ -144,11 +161,10 @@ button {
 }
 
 .splash .primary-btn {
-  position: absolute;
-  left: 38px;
-  right: 38px;
-  bottom: 58px;
-  width: auto;
+  width: calc(100% - 28px);
+  max-width: 330px;
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 .secondary-btn {
@@ -492,10 +508,10 @@ textarea:focus {
   left: 0;
   right: 0;
   bottom: 0;
-  height: 86px;
+  height: calc(86px + env(safe-area-inset-bottom));
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 10px 38px 18px;
+  padding: 10px 38px calc(18px + env(safe-area-inset-bottom));
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background: rgba(8, 9, 10, 0.94);
   backdrop-filter: blur(18px);
@@ -526,8 +542,8 @@ textarea:focus {
 
   .phone-shell {
     width: 100vw;
-    height: 100vh;
-    min-height: 720px;
+    height: 100dvh;
+    min-height: 0;
     border: 0;
     border-radius: 0;
     box-shadow: none;
@@ -539,6 +555,36 @@ textarea:focus {
 
   .screen {
     padding-inline: 20px;
+  }
+
+  .splash {
+    padding-top: clamp(88px, 20dvh, 178px);
+    padding-inline: 20px;
+  }
+
+  .brand-mark {
+    width: 78px;
+    height: 78px;
+    font-size: 74px;
+  }
+
+  .splash h1 {
+    font-size: 27px;
+    letter-spacing: 10px;
+  }
+
+  .tagline {
+    margin-top: 22px;
+  }
+
+  .subline {
+    margin-top: 14px;
+    font-size: 10px;
+  }
+
+  .mountain {
+    bottom: 72px;
+    height: 210px;
   }
 
   .streak-card {
