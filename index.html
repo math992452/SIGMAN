@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050607" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SIGMAN" />
+    <meta name="description" content="SIGMAN discipline tracker MVP" />
+    <title>SIGMAN</title>
+    <link rel="manifest" href="manifest.json" />
+    <link rel="apple-touch-icon" href="assets/icon-180.png" />
+    <link rel="icon" href="assets/icon-192.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="SIGMAN MVP">
+      <section class="screen splash active" data-screen="splash">
+        <div class="brand-mark">&Sigma;</div>
+        <h1>SIGMAN</h1>
+        <p class="tagline">&#20811;&#21046;&#30070;&#19979;&#65292;&#25104;&#23601;&#38750;&#20961;</p>
+        <p class="subline">DISCIPLINE TODAY, LEGEND TOMORROW.</p>
+        <div class="mountain" aria-hidden="true"></div>
+        <button class="primary-btn" data-start>&#38283;&#22987;&#20170;&#22825;</button>
+      </section>
+
+      <section class="screen app-screen" data-screen="home">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">&#20170;&#26085;&#29376;&#24907;</span>
+            <h2>SIGMAN</h2>
+          </div>
+          <button class="icon-btn" data-open-setup aria-label="Settings">&#9881;</button>
+        </header>
+
+        <div class="content">
+          <section class="streak-card">
+            <div class="ring" id="ring">
+              <span>&#36899;&#32396;&#22533;&#25345;</span>
+              <strong id="streakDays">0</strong>
+              <small>&#22825;</small>
+            </div>
+            <div class="streak-meta">
+              <span>&#38283;&#22987;&#26085;&#26399;</span>
+              <strong id="startDateLabel">&#20170;&#22825;</strong>
+              <span>&#26368;&#20339;&#32000;&#37636;</span>
+              <strong id="bestDays">0 &#22825;</strong>
+            </div>
+            <blockquote>
+              &#19981;&#38752;&#24773;&#32210;&#25744;&#20303;&#65292;&#38752;&#31995;&#32113;&#25744;&#20303;&#12290;
+              <cite id="reasonLabel">&#25105;&#30340;&#29702;&#30001;&#36996;&#27794;&#35373;&#23450;</cite>
+            </blockquote>
+          </section>
+
+          <section class="rescue-strip">
+            <div>
+              <span class="eyebrow">&#34909;&#21205;&#20358;&#35186;</span>
+              <h3>&#20808;&#25744;&#36942; 90 &#31186;</h3>
+            </div>
+            <button class="secondary-btn" data-go="rescue" data-nav="rescue">&#36914;&#20837;&#24613;&#25937;</button>
+          </section>
+
+          <section class="task-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">&#27599;&#26085;&#20219;&#21209;</span>
+                <h3>&#20170;&#22825;&#21482;&#38656;&#35201;&#23436;&#25104;&#36889; 4 &#20214;&#20107;</h3>
+              </div>
+              <span><b id="doneCount">0</b>/4</span>
+            </div>
+            <div class="tasks" id="taskList"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen app-screen" data-screen="rescue">
+        <header class="detailbar">
+          <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
+          <h2>&#34909;&#21205;&#24613;&#25937;</h2>
+          <button class="icon-btn" data-reset-timer aria-label="Reset timer">&#8635;</button>
+        </header>
+
+        <div class="content rescue-content">
+          <section class="timer-card">
+            <span class="eyebrow">&#29694;&#22312;&#19981;&#35201;&#35527;&#24847;&#24535;&#21147;</span>
+            <h1>&#36681;&#31227;&#27880;&#24847;&#21147;</h1>
+            <div class="timer" id="timer">01:30</div>
+            <p id="rescuePrompt">&#25918;&#19979;&#25163;&#27231;&#65292;&#20808;&#20570; 10 &#27425;&#28145;&#21628;&#21560;&#12290;</p>
+            <button class="primary-btn" id="timerButton">&#38283;&#22987; 90 &#31186;</button>
+          </section>
+
+          <section class="action-panel">
+            <div class="section-head compact">
+              <h3>&#36984;&#19968;&#20491;&#31435;&#21051;&#34892;&#21205;</h3>
+              <span>&#19981;&#29992;&#23436;&#32654;&#65292;&#21482;&#35201;&#38626;&#38283;&#21050;&#28608;&#28304;</span>
+            </div>
+            <div class="action-grid" id="actionGrid"></div>
+          </section>
+
+          <button class="wide-action" id="surviveButton">&#25105;&#24050;&#28193;&#36942;&#36889;&#19968;&#21051;</button>
+        </div>
+      </section>
+
+      <section class="screen app-screen" data-screen="setup">
+        <header class="detailbar">
+          <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
+          <h2>&#26053;&#31243;&#35373;&#23450;</h2>
+          <span></span>
+        </header>
+
+        <form class="content setup-form" id="setupForm">
+          <label>
+            <span>&#38283;&#22987;&#26085;&#26399;</span>
+            <input type="date" id="startDateInput" />
+          </label>
+          <label>
+            <span>&#25105;&#28858;&#20160;&#40636;&#35201;&#25106;</span>
+            <textarea id="reasonInput" rows="4" placeholder="&#20363;&#22914;&#65306;&#25105;&#35201;&#25226;&#27880;&#24847;&#21147;&#25343;&#22238;&#20358;&#65292;&#35722;&#25104;&#26356;&#31337;&#30340;&#20154;&#12290;"></textarea>
+          </label>
+          <button class="primary-btn" type="submit">&#20786;&#23384;&#35373;&#23450;</button>
+          <button class="danger-btn" type="button" id="relapseButton">&#20170;&#22825;&#30772;&#25106;&#65292;&#37325;&#26032;&#38283;&#22987;</button>
+        </form>
+      </section>
+
+      <nav class="bottom-nav" hidden>
+        <button class="active" data-go="home" data-nav="home"><span>&#8962;</span>&#39318;&#38913;</button>
+        <button data-go="home" data-nav="tasks" data-jump="tasks"><span>&#10003;</span>&#20219;&#21209;</button>
+        <button data-go="rescue" data-nav="rescue"><span>&#9889;</span>&#24613;&#25937;</button>
+      </nav>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
