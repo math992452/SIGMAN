@@ -25,7 +25,7 @@ const taskFactories = [
     ]);
     const amount = pick(move.values);
     return {
-      icon: "\u529b",
+      icon: "\u9ad4\u80fd",
       title: `\u5b8c\u6210 ${amount} ${move.unit}${move.name}`,
       description: pick([
         "\u628a\u885d\u52d5\u8f49\u6210\u8eab\u9ad4\u884c\u52d5\u3002",
@@ -42,7 +42,7 @@ const taskFactories = [
     ]);
     const amount = pick(plan.values);
     return {
-      icon: "\u547c",
+      icon: "\u547c\u5438",
       title: `${plan.title} ${amount} ${plan.unit}`,
       description: pick([
         "\u8b93\u8eab\u9ad4\u5148\u964d\u901f\uff0c\u885d\u52d5\u6703\u8ddf\u8457\u4e0b\u964d\u3002",
@@ -54,7 +54,7 @@ const taskFactories = [
   () => {
     const pages = pick([5, 8, 10, 12, 15, 20]);
     return {
-      icon: "\u66f8",
+      icon: "\u95b1\u8b80",
       title: `\u95b1\u8b80 ${pages} \u9801`,
       description: pick([
         "\u628a\u6ce8\u610f\u529b\u62c9\u56de\u9577\u671f\u76ee\u6a19\u3002",
@@ -66,7 +66,7 @@ const taskFactories = [
   () => {
     const minutes = pick([3, 5, 8, 10, 12, 15]);
     return {
-      icon: "\u975c",
+      icon: "\u975c\u5750",
       title: `\u975c\u5750 ${minutes} \u5206\u9418`,
       description: pick([
         "\u89c0\u5bdf\u885d\u52d5\uff0c\u4e0d\u6025\u8457\u53cd\u61c9\u3002",
@@ -78,7 +78,7 @@ const taskFactories = [
   () => {
     const minutes = pick([5, 8, 10, 12, 15, 20]);
     return {
-      icon: "\u8d70",
+      icon: "\u8d70\u52d5",
       title: `\u5916\u51fa\u6216\u539f\u5730\u8d70\u52d5 ${minutes} \u5206\u9418`,
       description: pick([
         "\u96e2\u958b\u523a\u6fc0\u6e90\uff0c\u5148\u63db\u4e00\u500b\u7a7a\u9593\u3002",
@@ -90,7 +90,7 @@ const taskFactories = [
   () => {
     const minutes = pick([3, 5, 8, 10, 12]);
     return {
-      icon: "\u6574",
+      icon: "\u6574\u7406",
       title: `\u6574\u7406\u684c\u9762 ${minutes} \u5206\u9418`,
       description: pick([
         "\u628a\u5916\u5728\u79e9\u5e8f\u627e\u56de\u4f86\uff0c\u5167\u5728\u6703\u6bd4\u8f03\u7a69\u3002",
@@ -102,7 +102,7 @@ const taskFactories = [
   () => {
     const lines = pick([3, 5, 7, 10]);
     return {
-      icon: "\u5beb",
+      icon: "\u66f8\u5beb",
       title: `\u5beb\u4e0b ${lines} \u884c\u4eca\u5929\u7684\u72c0\u614b`,
       description: pick([
         "\u628a\u60c5\u7dd2\u5beb\u51fa\u4f86\uff0c\u5b83\u5c31\u4e0d\u6703\u5168\u90e8\u7559\u5728\u8166\u88e1\u3002",
@@ -114,7 +114,7 @@ const taskFactories = [
   () => {
     const amount = pick([300, 400, 500, 600, 800]);
     return {
-      icon: "\u6c34",
+      icon: "\u88dc\u6c34",
       title: `\u559d\u6c34 ${amount} ml`,
       description: pick([
         "\u5148\u7167\u9867\u8eab\u9ad4\uff0c\u5c31\u662f\u5728\u7167\u9867\u610f\u5fd7\u529b\u3002",
@@ -126,12 +126,12 @@ const taskFactories = [
 ];
 
 const rescueActions = [
-  { id: "quick_challenge", icon: "\u529b", title: "\u5feb\u901f\u6311\u6230", desc: "\u505a 20 \u6b21\u4f0f\u5730\u633a\u8eab\uff0c\u6216\u539f\u5730\u6df1\u8e72 30 \u79d2\u3002" },
-  { id: "breathing", icon: "\u606f", title: "\u547c\u5438\u7df4\u7fd2", desc: "4-7-8 \u547c\u5438\u6cd5\uff0c\u505a 4 \u56de\u5408\u3002" },
-  { id: "leave", icon: "\u8d70", title: "\u96e2\u958b\u73fe\u5834", desc: "\u7acb\u523b\u96e2\u958b\u623f\u9593\uff0c\u8d70\u5230\u5ba2\u5ef3\u3001\u967d\u53f0\u6216\u5ba4\u5916\u3002" },
-  { id: "cold_water", icon: "\u51b7", title: "\u51b7\u6c34\u6d17\u81c9", desc: "\u7528\u51b7\u6c34\u6d17\u81c9 30 \u79d2\u3002" },
-  { id: "write", icon: "\u5beb", title: "\u5beb\u4e0b\u611f\u53d7", desc: "\u5beb\u4e00\u53e5\u8a71\uff1a\u6211\u73fe\u5728\u60f3\u7834\u6212\uff0c\u56e0\u70ba____\u3002" },
-  { id: "commitment", icon: "\u8afe", title: "\u95b1\u8b80\u627f\u8afe", desc: "\u6211\u4e0d\u9700\u8981\u8ddf\u885d\u52d5\u8faf\u8ad6\u3002\u6211\u53ea\u9700\u8981\u5ef6\u5f8c 90 \u79d2\u3002" }
+  { id: "quick_challenge", image: "assets/action-body.svg", title: "\u8eab\u9ad4\u6311\u6230", desc: "\u505a 20 \u6b21\u4f0f\u5730\u633a\u8eab\uff0c\u6216\u539f\u5730\u6df1\u8e72 30 \u79d2\u3002" },
+  { id: "breathing", image: "assets/action-breath.svg", title: "\u547c\u5438\u8a13\u7df4", desc: "4-7-8 \u547c\u5438\u6cd5\uff0c\u505a 4 \u56de\u5408\u3002" },
+  { id: "leave", image: "assets/action-leave.svg", title: "\u96e2\u958b\u73fe\u5834", desc: "\u7acb\u523b\u96e2\u958b\u623f\u9593\uff0c\u8d70\u5230\u5ba2\u5ef3\u3001\u967d\u53f0\u6216\u5ba4\u5916\u3002" },
+  { id: "cold_water", image: "assets/action-cold.svg", title: "\u51b7\u6c34\u91cd\u7f6e", desc: "\u7528\u51b7\u6c34\u6d17\u81c9 30 \u79d2\uff0c\u8b93\u5927\u8166\u5148\u505c\u4e0b\u4f86\u3002" },
+  { id: "write", image: "assets/action-write.svg", title: "\u5beb\u4e0b\u73fe\u5728", desc: "\u5beb\u4e00\u53e5\u8a71\uff1a\u6211\u73fe\u5728\u60f3\u7834\u6212\uff0c\u56e0\u70ba____\u3002" },
+  { id: "commitment", image: "assets/action-shield.svg", title: "\u91cd\u8b80\u627f\u8afe", desc: "\u6211\u4e0d\u9700\u8981\u8ddf\u885d\u52d5\u8faf\u8ad6\u3002\u6211\u53ea\u9700\u8981\u5ef6\u5f8c 90 \u79d2\u3002" }
 ];
 
 const defaultState = {
@@ -292,7 +292,7 @@ function renderStats() {
   document.querySelector("#bestDays").textContent = `${state.userState.bestStreak} ${copy.day}`;
   document.querySelector("#startDateLabel").textContent = formatDate(state.userState.startDate);
   document.querySelector("#homeMessage").textContent = streak > 1
-    ? `你已經撐過 ${streak} 天，現在只需要保住這一天。`
+    ? `\u4f60\u5df2\u7d93\u9023\u7e8c\u5b88\u4f4f ${streak} \u5929\u3002\u4eca\u5929\u53ea\u9700\u8981\u7e7c\u7e8c\u57f7\u884c\u3002`
     : copy.guardToday;
   document.querySelector("#reasonLabel").textContent = state.userState.reason || copy.fallbackReason;
 
@@ -325,7 +325,7 @@ function renderActions() {
   document.querySelector("#actionGrid").innerHTML = rescueActions
     .map((action) => `
       <button class="action-card ${selectedActionId === action.id ? "selected" : ""}" data-action="${action.id}">
-        <span>${action.icon}</span>
+        <span class="action-visual"><img src="${action.image}" alt="" loading="lazy"></span>
         <strong>${action.title}</strong>
         <small>${action.desc}</small>
       </button>
@@ -339,7 +339,7 @@ function renderTimer() {
 
 function renderCompletion() {
   const streak = daysSince(state.userState.startDate);
-  document.querySelector("#completionText").textContent = `${copy.preserved} 目前紀錄仍然保留：${streak} 天。${copy.nextStep}`;
+  document.querySelector("#completionText").textContent = `${copy.preserved} \u76ee\u524d\u7d00\u9304\u4ecd\u7136\u4fdd\u7559\uff1a${streak} \u5929\u3002${copy.nextStep}`;
 }
 
 function renderAll() {
