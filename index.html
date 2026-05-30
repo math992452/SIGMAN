@@ -9,10 +9,10 @@
     <meta name="apple-mobile-web-app-title" content="SIGMAN" />
     <meta name="description" content="SIGMAN discipline tracker MVP" />
     <title>SIGMAN</title>
-    <link rel="manifest" href="manifest.json?v=7" />
+    <link rel="manifest" href="manifest.json?v=8" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/icon-192.png" />
-    <link rel="stylesheet" href="styles.css?v=7" />
+    <link rel="stylesheet" href="styles.css?v=8" />
   </head>
   <body>
     <main class="phone-shell" aria-label="SIGMAN MVP">
@@ -68,7 +68,10 @@
                 <span class="eyebrow">&#27599;&#26085;&#20219;&#21209;</span>
                 <h3>&#20170;&#22825;&#21482;&#38656;&#35201;&#23436;&#25104;&#36889; 4 &#20214;&#20107;</h3>
               </div>
-              <span><b id="doneCount">0</b>/4</span>
+              <div class="task-tools">
+                <span><b id="doneCount">0</b>/4</span>
+                <button class="mini-action" type="button" id="refreshTasksButton">&#21047;&#26032;</button>
+              </div>
             </div>
             <div class="tasks" id="taskList"></div>
           </section>
@@ -155,6 +158,6 @@
       </nav>
     </main>
 
-    <script src="app.js?v=7"></script>
+    <script src="app.js?v=8"></script>
   </body>
 </html>

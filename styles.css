@@ -443,6 +443,24 @@ cite {
   font-size: 12px;
 }
 
+.task-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mini-action {
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid rgba(226, 191, 145, 0.25);
+  border-radius: 999px;
+  background: rgba(226, 191, 145, 0.12);
+  color: var(--gold-2);
+  font-size: 12px;
+  font-weight: 800;
+}
+
 .task {
   width: 100%;
   display: grid;
