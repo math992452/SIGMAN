@@ -1,10 +1,17 @@
-const CACHE_NAME = "sigman-cache-v9";
+const CACHE_NAME = "sigman-cache-v10";
 const APP_SHELL = [
   "./",
   "./index.html",
-  "./styles.css?v=9",
-  "./app.js?v=9",
-  "./manifest.json?v=9",
+  "./app.html",
+  "./styles.css?v=10",
+  "./app.js?v=10",
+  "./landing.js?v=10",
+  "./manifest.json?v=10",
+  "./assets/brand/sigma-shield.svg",
+  "./assets/brand/sigman-wordmark.svg",
+  "./assets/ui/gold-divider.svg",
+  "./assets/ui/premium-ring.svg",
+  "./assets/ui/premium-panel-bg.svg",
   "./assets/action-body.svg",
   "./assets/action-breath.svg",
   "./assets/action-leave.svg",

@@ -1,8 +1,8 @@
 {
   "name": "SIGMAN",
   "short_name": "SIGMAN",
-  "description": "Discipline tracker MVP",
-  "start_url": "./index.html",
+  "description": "自律掌控系統",
+  "start_url": "./app.html",
   "scope": "./",
   "display": "standalone",
   "background_color": "#050607",

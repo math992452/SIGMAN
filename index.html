@@ -4,160 +4,117 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#050607" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-    <meta name="apple-mobile-web-app-title" content="SIGMAN" />
-    <meta name="description" content="SIGMAN discipline tracker MVP" />
-    <title>SIGMAN</title>
-    <link rel="manifest" href="manifest.json?v=9" />
+    <meta name="description" content="SIGMAN 是為菁英男性設計的自律掌控系統。衝動來襲時，先撐過 90 秒。" />
+    <title>SIGMAN | 自律掌控系統</title>
+    <link rel="manifest" href="manifest.json?v=10" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/icon-192.png" />
-    <link rel="stylesheet" href="styles.css?v=9" />
+    <link rel="stylesheet" href="styles.css?v=10" />
   </head>
-  <body>
-    <main class="phone-shell" aria-label="SIGMAN MVP">
-      <section class="screen splash active" data-screen="splash">
-        <div class="brand-mark">&Sigma;</div>
-        <h1>SIGMAN</h1>
-        <p class="tagline">&#20811;&#21046;&#30070;&#19979;&#65292;&#25104;&#23601;&#38750;&#20961;</p>
-        <p class="subline">DISCIPLINE TODAY, LEGEND TOMORROW.</p>
-        <div class="mountain" aria-hidden="true"></div>
-        <button class="primary-btn" data-start>&#38283;&#22987;&#20170;&#22825;</button>
-      </section>
+  <body class="landing-body">
+    <header class="landing-nav">
+      <a class="landing-logo" href="#top" aria-label="SIGMAN">
+        <img src="assets/brand/sigma-shield.svg" alt="" />
+        <span>SIGMAN</span>
+      </a>
+      <nav>
+        <a href="#protocol">流程</a>
+        <a href="#waitlist">預約</a>
+        <a href="app.html">進入 APP</a>
+      </nav>
+    </header>
 
-      <section class="screen app-screen" data-screen="home">
-        <header class="topbar">
-          <div>
-            <span class="eyebrow">&#36899;&#32396;&#22533;&#25345;&#20013;</span>
-            <h2>SIGMAN</h2>
+    <main id="top" class="landing-page">
+      <section class="landing-hero">
+        <div class="hero-copy">
+          <span class="overline">高價值男人，不被衝動指揮</span>
+          <h1>衝動來襲，先撐過 90 秒。</h1>
+          <p>SIGMAN 是一套為男性設計的自律掌控系統：紀錄連續天數、執行每日小勝利，並在衝動瞬間啟動戰術行動。</p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#waitlist">加入測試名單</a>
+            <a class="outline-btn" href="app.html">先體驗 APP</a>
           </div>
-          <button class="icon-btn" data-go="setup" data-nav="setup" aria-label="Settings">&#9881;</button>
-        </header>
+          <img class="gold-divider" src="assets/ui/gold-divider.svg" alt="" />
+        </div>
 
-        <div class="content home-content">
-          <section class="streak-hero">
-            <span class="eyebrow">&#30446;&#21069;&#32000;&#37636;</span>
-            <div class="day-number">
-              <strong id="streakDays">1</strong>
-              <span>&#22825;</span>
+        <div class="device-stage" aria-label="SIGMAN app preview">
+          <div class="preview-phone">
+            <div class="preview-top">SIGMAN</div>
+            <img class="preview-sigil" src="assets/brand/sigma-shield.svg" alt="" />
+            <div class="preview-ring">
+              <img src="assets/ui/premium-ring.svg" alt="" />
+              <strong>21</strong>
+              <span>天</span>
             </div>
-            <p id="homeMessage">&#20170;&#22825;&#21482;&#38656;&#35201;&#23432;&#20303;&#20170;&#22825;&#12290;</p>
-            <div class="metric-row">
-              <span>&#38283;&#22987;&#26085;&#26399; <b id="startDateLabel">--</b></span>
-              <span>&#26368;&#20339;&#32000;&#37636; <b id="bestDays">1 &#22825;</b></span>
+            <div class="preview-stats">
+              <span>本月掌控<b>18 次</b></span>
+              <span>成功抵制<b>92%</b></span>
+              <span>協定完成<b>12 次</b></span>
             </div>
-          </section>
-
-          <button class="reason-card" data-go="setup" data-nav="setup">
-            <span class="eyebrow">&#25105;&#30340;&#29702;&#30001;</span>
-            <strong id="reasonLabel">&#35373;&#23450;&#19968;&#20491;&#20320;&#19981;&#24819;&#20013;&#26039;&#32000;&#37636;&#30340;&#29702;&#30001;&#12290;</strong>
-          </button>
-
-          <section class="rescue-strip priority">
-            <div>
-              <span class="eyebrow">&#34909;&#21205;&#20358;&#35186;</span>
-              <h3>&#31435;&#21363;&#36914;&#20837; 90 &#31186;&#24613;&#25937;&#27969;&#31243;</h3>
-              <p>&#19981;&#35201;&#24613;&#33879;&#20570;&#27770;&#23450;&#12290;&#20808;&#25744;&#36942;&#36889;&#19968;&#27874;&#12290;</p>
-            </div>
-            <button class="secondary-btn" data-go="rescue" data-nav="rescue">&#38283;&#22987;&#24613;&#25937;</button>
-          </section>
-
-          <section class="task-panel">
-            <div class="section-head">
-              <div>
-                <span class="eyebrow">&#27599;&#26085;&#20219;&#21209;</span>
-                <h3>&#20170;&#22825;&#21482;&#38656;&#35201;&#23436;&#25104;&#36889; 4 &#20214;&#20107;</h3>
-              </div>
-              <div class="task-tools">
-                <span><b id="doneCount">0</b>/4</span>
-                <button class="mini-action" type="button" id="refreshTasksButton">&#21047;&#26032;</button>
-              </div>
-            </div>
-            <div class="tasks" id="taskList"></div>
-          </section>
+            <a class="preview-cta" href="app.html">啟動掌控流程</a>
+          </div>
         </div>
       </section>
 
-      <section class="screen app-screen" data-screen="rescue">
-        <header class="detailbar">
-          <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
-          <h2>&#20572;&#19979;&#20358;&#65292;&#36681;&#31227;&#27880;&#24847;&#21147;</h2>
-          <button class="icon-btn" data-reset-timer aria-label="Reset timer">&#8635;</button>
-        </header>
-
-        <div class="content rescue-content">
-          <section class="timer-card" id="timerCard">
-            <span class="eyebrow">&#36984;&#25799;&#19968;&#20491;&#34892;&#21205;&#65292;&#25744;&#36942;&#36889;&#27874;&#34909;&#21205;</span>
-            <div class="timer" id="timer">90</div>
-            <span class="timer-unit">&#31186;</span>
-            <p id="rescuePrompt">&#20320;&#19981;&#38656;&#35201;&#35299;&#27770;&#19968;&#29983;&#65292;&#21482;&#38656;&#35201;&#25744;&#36942; 90 &#31186;&#12290;</p>
-          </section>
-
-          <section class="action-panel">
-            <div class="section-head compact">
-              <h3>&#31435;&#21363;&#34892;&#21205;</h3>
-              <span>&#29992;&#19968;&#20491;&#21205;&#20316;&#25130;&#26039;&#33258;&#21205;&#21453;&#25033;</span>
-            </div>
-            <div class="action-grid" id="actionGrid"></div>
-          </section>
-
-          <section class="completion-card" id="completionCard" hidden>
-            <span class="eyebrow">&#24613;&#25937;&#23436;&#25104;</span>
-            <h3>&#20320;&#21083;&#21083;&#23432;&#20303;&#20102;&#19968;&#27425;&#12290;</h3>
-            <p id="completionText">&#36889;&#19968;&#27425;&#65292;&#32000;&#37636;&#20445;&#30041;&#19979;&#20358;&#20102;&#12290;</p>
-            <button class="secondary-btn" data-go="home" data-nav="home">&#22238;&#21040;&#39318;&#38913;</button>
-          </section>
-
-          <button class="wide-action" id="surviveButton">&#25105;&#24050;&#28193;&#36942;&#36889;&#19968;&#21051;</button>
-          <button class="text-link" data-go="setup" data-nav="setup">&#25105;&#24050;&#32147;&#30772;&#25106;&#65292;&#38656;&#35201;&#37325;&#26032;&#38283;&#22987;</button>
+      <section id="protocol" class="landing-section">
+        <div class="section-title">
+          <span class="overline">CONTROL PROTOCOL</span>
+          <h2>不是壓抑欲望，而是拿回選擇權。</h2>
+        </div>
+        <div class="feature-grid">
+          <article>
+            <img src="assets/brand/sigma-shield.svg" alt="" />
+            <h3>紀律儀表板</h3>
+            <p>用連續天數與最佳紀錄，把抽象意志變成可看見的標準。</p>
+          </article>
+          <article>
+            <img src="assets/action-breath.svg" alt="" />
+            <h3>90 秒掌控協定</h3>
+            <p>衝動不是命令。先停止滑動、轉移注意力、讓身體重新接管。</p>
+          </article>
+          <article>
+            <img src="assets/action-body.svg" alt="" />
+            <h3>每日 4 個小勝利</h3>
+            <p>用可重複的行動訓練專注力、身體力、環境力與心態力。</p>
+          </article>
         </div>
       </section>
 
-      <section class="screen app-screen" data-screen="setup">
-        <header class="detailbar">
-          <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
-          <h2>&#35373;&#23450;&#33287;&#32000;&#37636;</h2>
-          <span></span>
-        </header>
+      <section class="landing-section split-section">
+        <div>
+          <span class="overline">TACTICAL ACTION CARDS</span>
+          <h2>用行動切斷自動反應。</h2>
+          <p>身體挑戰、呼吸訓練、離開現場、冷水重置、寫下現在、重讀承諾。每一張卡片都只做一件事：讓你撐過那一波。</p>
+        </div>
+        <div class="tactical-grid">
+          <img src="assets/action-body.svg" alt="身體挑戰" />
+          <img src="assets/action-breath.svg" alt="呼吸訓練" />
+          <img src="assets/action-leave.svg" alt="離開現場" />
+          <img src="assets/action-cold.svg" alt="冷水重置" />
+        </div>
+      </section>
 
-        <form class="content setup-form" id="setupForm">
-          <section class="setting-card">
-            <span class="eyebrow">&#30446;&#21069;&#32000;&#37636;</span>
-            <div class="stats-grid">
-              <span>&#30446;&#21069;&#36899;&#32396;<b id="settingsStreak">1 &#22825;</b></span>
-              <span>&#38283;&#22987;&#26085;&#26399;<b id="settingsStartDate">--</b></span>
-              <span>&#26368;&#20339;&#32000;&#37636;<b id="settingsBest">1 &#22825;</b></span>
-              <span>&#24613;&#25937;&#23436;&#25104;<b id="settingsRescues">0 &#27425;</b></span>
-            </div>
-          </section>
-
-          <section class="setting-card">
-            <label>
-              <span>&#25105;&#30340;&#25106;&#33394;&#29702;&#30001;</span>
-              <textarea id="reasonInput" rows="4" maxlength="80" placeholder="&#20363;&#22914;&#65306;&#25105;&#35201;&#25226;&#27880;&#24847;&#21147;&#25343;&#22238;&#20358;&#65292;&#35731;&#29983;&#27963;&#37325;&#26032;&#31337;&#23450;&#12290;"></textarea>
-            </label>
-            <label>
-              <span>&#38283;&#22987;&#26085;&#26399;</span>
-              <input type="date" id="startDateInput" />
-            </label>
-            <button class="primary-btn" type="submit">&#20786;&#23384;&#35373;&#23450;</button>
-          </section>
-
-          <section class="setting-card muted-card">
-            <span class="eyebrow">&#37325;&#26032;&#38283;&#22987;</span>
-            <p>&#37325;&#26032;&#38283;&#22987;&#19981;&#26159;&#21542;&#23450;&#20043;&#21069;&#30340;&#21162;&#21147;&#12290;&#26368;&#20339;&#32000;&#37636;&#26371;&#20445;&#30041;&#12290;</p>
-            <button class="danger-btn" type="button" id="relapseButton">&#37325;&#26032;&#38283;&#22987;&#20170;&#22825;</button>
-          </section>
+      <section id="waitlist" class="waitlist-section">
+        <div>
+          <span class="overline">PRIVATE BETA</span>
+          <h2>加入 SIGMAN 測試名單</h2>
+          <p>留下稱呼與信箱。Supabase 連線稍後接上，目前會先把資料暫存在本機，方便你測試表單流程。</p>
+        </div>
+        <form class="waitlist-form" id="waitlistForm">
+          <label>
+            <span>稱呼</span>
+            <input name="name" autocomplete="name" required placeholder="例如：Frank" />
+          </label>
+          <label>
+            <span>信箱</span>
+            <input name="email" type="email" autocomplete="email" required placeholder="you@example.com" />
+          </label>
+          <button class="primary-btn" type="submit">預約登記</button>
+          <p id="waitlistStatus" class="form-status" role="status"></p>
         </form>
       </section>
-
-      <nav class="bottom-nav" hidden>
-        <button class="active" data-go="home" data-nav="home"><span>&#8962;</span>&#39318;&#38913;</button>
-        <button data-go="rescue" data-nav="rescue"><span>&#9889;</span>&#24613;&#25937;</button>
-        <button data-go="setup" data-nav="setup"><span>&#9881;</span>&#35373;&#23450;</button>
-      </nav>
     </main>
 
-    <script src="app.js?v=9"></script>
+    <script src="landing.js?v=10"></script>
   </body>
 </html>

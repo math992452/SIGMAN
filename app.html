@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#050607" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="SIGMAN" />
+    <meta name="description" content="SIGMAN 自律掌控系統" />
+    <title>SIGMAN App</title>
+    <link rel="manifest" href="manifest.json?v=10" />
+    <link rel="apple-touch-icon" href="assets/icon-180.png" />
+    <link rel="icon" href="assets/icon-192.png" />
+    <link rel="stylesheet" href="styles.css?v=10" />
+  </head>
+  <body>
+    <main class="phone-shell" aria-label="SIGMAN MVP">
+      <section class="screen splash active" data-screen="splash">
+        <div class="brand-mark">&Sigma;</div>
+        <h1>SIGMAN</h1>
+        <p class="tagline">&#20811;&#21046;&#30070;&#19979;&#65292;&#25104;&#23601;&#38750;&#20961;</p>
+        <p class="subline">DISCIPLINE TODAY, LEGEND TOMORROW.</p>
+        <div class="mountain" aria-hidden="true"></div>
+        <button class="primary-btn" data-start>&#38283;&#22987;&#20170;&#22825;</button>
+      </section>
+
+      <section class="screen app-screen" data-screen="home">
+        <header class="topbar">
+          <div>
+            <span class="eyebrow">掌控中心</span>
+            <h2>SIGMAN</h2>
+          </div>
+          <button class="icon-btn" data-go="setup" data-nav="setup" aria-label="Settings">&#9881;</button>
+        </header>
+
+        <div class="content home-content">
+          <section class="streak-hero">
+            <img class="hero-sigil" src="assets/brand/sigma-shield.svg" alt="" />
+            <span class="eyebrow">紀律儀表板</span>
+            <div class="day-number">
+              <strong id="streakDays">1</strong>
+              <span>&#22825;</span>
+            </div>
+            <p id="homeMessage">&#20170;&#22825;&#21482;&#38656;&#35201;&#23432;&#20303;&#20170;&#22825;&#12290;</p>
+            <div class="metric-row">
+              <span>協定啟動 <b id="startDateLabel">--</b></span>
+              <span>最佳紀錄 <b id="bestDays">1 &#22825;</b></span>
+            </div>
+          </section>
+
+          <button class="reason-card" data-go="setup" data-nav="setup">
+            <span class="eyebrow">&#25105;&#30340;&#29702;&#30001;</span>
+            <strong id="reasonLabel">&#35373;&#23450;&#19968;&#20491;&#20320;&#19981;&#24819;&#20013;&#26039;&#32000;&#37636;&#30340;&#29702;&#30001;&#12290;</strong>
+          </button>
+
+          <section class="rescue-strip priority">
+            <div>
+              <span class="eyebrow">衝動來襲</span>
+              <h3>啟動 90 秒掌控協定</h3>
+              <p>停止滑動，離開刺激源，用行動奪回主導權。</p>
+            </div>
+            <button class="secondary-btn" data-go="rescue" data-nav="rescue">開始掌控</button>
+          </section>
+
+          <section class="task-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow">今日執行系統</span>
+                <h3>完成 4 個小勝利</h3>
+              </div>
+              <div class="task-tools">
+                <span><b id="doneCount">0</b>/4</span>
+                <button class="mini-action" type="button" id="refreshTasksButton">&#21047;&#26032;</button>
+              </div>
+            </div>
+            <div class="tasks" id="taskList"></div>
+          </section>
+        </div>
+      </section>
+
+      <section class="screen app-screen" data-screen="rescue">
+        <header class="detailbar">
+          <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
+          <h2>救援 / 掌控中心</h2>
+          <button class="icon-btn" data-reset-timer aria-label="Reset timer">&#8635;</button>
+        </header>
+
+        <div class="content rescue-content">
+          <section class="timer-card" id="timerCard">
+            <img class="timer-sigil" src="assets/brand/sigma-shield.svg" alt="" />
+            <span class="eyebrow">90 秒控制協定</span>
+            <div class="timer" id="timer">90</div>
+            <span class="timer-unit">&#31186;</span>
+            <p id="rescuePrompt">你不需要解決一生，只需要守住這一刻。</p>
+          </section>
+
+          <section class="action-panel">
+            <div class="section-head compact">
+              <h3>戰術行動卡</h3>
+              <span>用行動切斷自動反應</span>
+            </div>
+            <div class="action-grid" id="actionGrid"></div>
+          </section>
+
+          <section class="completion-card" id="completionCard" hidden>
+            <span class="eyebrow">掌控完成</span>
+            <h3>你剛剛守住了一次。</h3>
+            <p id="completionText">&#36889;&#19968;&#27425;&#65292;&#32000;&#37636;&#20445;&#30041;&#19979;&#20358;&#20102;&#12290;</p>
+            <button class="secondary-btn" data-go="home" data-nav="home">&#22238;&#21040;&#39318;&#38913;</button>
+          </section>
+
+          <button class="wide-action" id="surviveButton">我已完成掌控</button>
+          <button class="text-link" data-go="setup" data-nav="setup">我需要重置協定</button>
+        </div>
+      </section>
+
+      <section class="screen app-screen" data-screen="setup">
+        <header class="detailbar">
+          <button class="icon-btn" data-go="home" data-nav="home" aria-label="Back">&lsaquo;</button>
+          <h2>協定設定</h2>
+          <span></span>
+        </header>
+
+        <form class="content setup-form" id="setupForm">
+          <section class="setting-card">
+            <span class="eyebrow">目前紀錄</span>
+            <div class="stats-grid">
+              <span>連續掌控<b id="settingsStreak">1 &#22825;</b></span>
+              <span>啟動日期<b id="settingsStartDate">--</b></span>
+              <span>最佳紀錄<b id="settingsBest">1 &#22825;</b></span>
+              <span>協定完成<b id="settingsRescues">0 &#27425;</b></span>
+            </div>
+          </section>
+
+          <section class="setting-card">
+            <label>
+              <span>我的個人準則</span>
+              <textarea id="reasonInput" rows="4" maxlength="80" placeholder="&#20363;&#22914;&#65306;&#25105;&#35201;&#25226;&#27880;&#24847;&#21147;&#25343;&#22238;&#20358;&#65292;&#35731;&#29983;&#27963;&#37325;&#26032;&#31337;&#23450;&#12290;"></textarea>
+            </label>
+            <label>
+              <span>&#38283;&#22987;&#26085;&#26399;</span>
+              <input type="date" id="startDateInput" />
+            </label>
+            <button class="primary-btn" type="submit">儲存協定</button>
+          </section>
+
+          <section class="setting-card muted-card">
+            <span class="eyebrow">重置協定</span>
+            <p>一次失誤不是投降。最佳紀錄保留，標準不變，重新出發。</p>
+            <button class="danger-btn" type="button" id="relapseButton">重新啟動今天</button>
+          </section>
+        </form>
+      </section>
+
+      <nav class="bottom-nav" hidden>
+        <button class="active" data-go="home" data-nav="home"><span>&#8962;</span>&#39318;&#38913;</button>
+        <button data-go="rescue" data-nav="rescue"><span>&#9889;</span>&#24613;&#25937;</button>
+        <button data-go="setup" data-nav="setup"><span>&#9881;</span>&#35373;&#23450;</button>
+      </nav>
+    </main>
+
+    <script src="app.js?v=10"></script>
+  </body>
+</html>

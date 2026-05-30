@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="SIGMAN shield">
+  <defs>
+    <linearGradient id="gold" x1="36" x2="220" y1="18" y2="234">
+      <stop offset="0" stop-color="#8f5d21"/>
+      <stop offset=".22" stop-color="#f4d49a"/>
+      <stop offset=".52" stop-color="#b6782e"/>
+      <stop offset=".78" stop-color="#ffe7b7"/>
+      <stop offset="1" stop-color="#7a4b17"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="42%" r="58%">
+      <stop offset="0" stop-color="#f7dca9" stop-opacity=".35"/>
+      <stop offset=".55" stop-color="#d59a43" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#000" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="256" height="256" rx="52" fill="#050607"/>
+  <circle cx="128" cy="128" r="104" fill="none" stroke="url(#gold)" stroke-width="2" opacity=".36"/>
+  <circle cx="128" cy="128" r="83" fill="none" stroke="#d8a052" stroke-width="1" opacity=".35" stroke-dasharray="3 8"/>
+  <path d="M128 31l72 27v48c0 56-29 94-72 118-43-24-72-62-72-118V58z" fill="#0d0b09" stroke="url(#gold)" stroke-width="7" stroke-linejoin="round"/>
+  <path d="M128 43l59 22v41c0 48-23 78-59 99-36-21-59-51-59-99V65z" fill="url(#glow)" stroke="#f0ca8e" stroke-opacity=".28" stroke-width="2"/>
+  <path d="M153 80H96l47 48-47 48h61" fill="none" stroke="url(#gold)" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
