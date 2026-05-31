@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#050607" />
     <meta name="description" content="SIGMAN 是為菁英男性設計的自律掌控系統。衝動來襲時，先撐過 90 秒。" />
     <title>SIGMAN | 自律掌控系統</title>
-    <link rel="manifest" href="manifest.json?v=10" />
+    <link rel="manifest" href="manifest.json?v=11" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/icon-192.png" />
-    <link rel="stylesheet" href="styles.css?v=10" />
+    <link rel="stylesheet" href="styles.css?v=11" />
   </head>
   <body class="landing-body">
     <header class="landing-nav">
@@ -43,8 +43,10 @@
             <img class="preview-sigil" src="assets/brand/sigma-shield.svg" alt="" />
             <div class="preview-ring">
               <img src="assets/ui/premium-ring.svg" alt="" />
-              <strong>21</strong>
-              <span>天</span>
+              <div class="preview-ring-value">
+                <strong>21</strong>
+                <span>天</span>
+              </div>
             </div>
             <div class="preview-stats">
               <span>本月掌控<b>18 次</b></span>
@@ -63,17 +65,17 @@
         </div>
         <div class="feature-grid">
           <article>
-            <img src="assets/brand/sigma-shield.svg" alt="" />
+            <span class="feature-icon icon-mask" style="--icon: url('assets/icons/feature-standard.svg')" aria-hidden="true"></span>
             <h3>紀律儀表板</h3>
             <p>用連續天數與最佳紀錄，把抽象意志變成可看見的標準。</p>
           </article>
           <article>
-            <img src="assets/action-breath.svg" alt="" />
+            <span class="feature-icon icon-mask" style="--icon: url('assets/icons/feature-protocol.svg')" aria-hidden="true"></span>
             <h3>90 秒掌控協定</h3>
             <p>衝動不是命令。先停止滑動、轉移注意力、讓身體重新接管。</p>
           </article>
           <article>
-            <img src="assets/action-body.svg" alt="" />
+            <span class="feature-icon icon-mask" style="--icon: url('assets/icons/feature-wins.svg')" aria-hidden="true"></span>
             <h3>每日 4 個小勝利</h3>
             <p>用可重複的行動訓練專注力、身體力、環境力與心態力。</p>
           </article>
@@ -87,10 +89,30 @@
           <p>身體挑戰、呼吸訓練、離開現場、冷水重置、寫下現在、重讀承諾。每一張卡片都只做一件事：讓你撐過那一波。</p>
         </div>
         <div class="tactical-grid">
-          <img src="assets/action-body.svg" alt="身體挑戰" />
-          <img src="assets/action-breath.svg" alt="呼吸訓練" />
-          <img src="assets/action-leave.svg" alt="離開現場" />
-          <img src="assets/action-cold.svg" alt="冷水重置" />
+          <span class="action-icon icon-mask" style="--icon: url('assets/icons/action-body.svg')" aria-label="身體挑戰"></span>
+          <span class="action-icon icon-mask" style="--icon: url('assets/icons/action-breath.svg')" aria-label="呼吸訓練"></span>
+          <span class="action-icon icon-mask" style="--icon: url('assets/icons/action-leave.svg')" aria-label="離開現場"></span>
+          <span class="action-icon icon-mask" style="--icon: url('assets/icons/action-cold.svg')" aria-label="冷水重置"></span>
+        </div>
+      </section>
+
+      <section class="landing-section split-section">
+        <div>
+          <span class="overline">STANDARD NEVER CHANGES</span>
+          <h2>重啟，但不投降。</h2>
+          <p>一次失誤不是身份。SIGMAN 保留最佳紀錄，讓你重新啟動協定，回到可執行的標準。</p>
+        </div>
+        <div class="feature-grid compact-features">
+          <article>
+            <span class="feature-icon icon-mask" style="--icon: url('assets/icons/feature-standard.svg')" aria-hidden="true"></span>
+            <h3>個人準則</h3>
+            <p>記住你為何開始。</p>
+          </article>
+          <article>
+            <span class="feature-icon icon-mask" style="--icon: url('assets/icons/feature-reset.svg')" aria-hidden="true"></span>
+            <h3>重置協定</h3>
+            <p>失誤後立刻回到流程。</p>
+          </article>
         </div>
       </section>
 
@@ -115,6 +137,6 @@
       </section>
     </main>
 
-    <script src="landing.js?v=10"></script>
+    <script src="landing.js?v=11"></script>
   </body>
 </html>

@@ -126,12 +126,12 @@ const taskFactories = [
 ];
 
 const rescueActions = [
-  { id: "quick_challenge", image: "assets/action-body.svg", title: "\u8eab\u9ad4\u6311\u6230", desc: "\u505a 20 \u6b21\u4f0f\u5730\u633a\u8eab\uff0c\u6216\u539f\u5730\u6df1\u8e72 30 \u79d2\u3002" },
-  { id: "breathing", image: "assets/action-breath.svg", title: "\u547c\u5438\u8a13\u7df4", desc: "4-7-8 \u547c\u5438\u6cd5\uff0c\u505a 4 \u56de\u5408\u3002" },
-  { id: "leave", image: "assets/action-leave.svg", title: "\u96e2\u958b\u73fe\u5834", desc: "\u7acb\u523b\u96e2\u958b\u623f\u9593\uff0c\u8d70\u5230\u5ba2\u5ef3\u3001\u967d\u53f0\u6216\u5ba4\u5916\u3002" },
-  { id: "cold_water", image: "assets/action-cold.svg", title: "\u51b7\u6c34\u91cd\u7f6e", desc: "\u7528\u51b7\u6c34\u6d17\u81c9 30 \u79d2\uff0c\u8b93\u5927\u8166\u5148\u505c\u4e0b\u4f86\u3002" },
-  { id: "write", image: "assets/action-write.svg", title: "\u5beb\u4e0b\u73fe\u5728", desc: "\u5beb\u4e00\u53e5\u8a71\uff1a\u6211\u73fe\u5728\u60f3\u7834\u6212\uff0c\u56e0\u70ba____\u3002" },
-  { id: "commitment", image: "assets/action-shield.svg", title: "\u91cd\u8b80\u627f\u8afe", desc: "\u6211\u4e0d\u9700\u8981\u8ddf\u885d\u52d5\u8faf\u8ad6\u3002\u6211\u53ea\u9700\u8981\u5ef6\u5f8c 90 \u79d2\u3002" }
+  { id: "quick_challenge", image: "assets/icons/action-body.svg", title: "\u8eab\u9ad4\u6311\u6230", desc: "\u505a 20 \u6b21\u4f0f\u5730\u633a\u8eab\uff0c\u6216\u539f\u5730\u6df1\u8e72 30 \u79d2\u3002" },
+  { id: "breathing", image: "assets/icons/action-breath.svg", title: "\u547c\u5438\u8a13\u7df4", desc: "4-7-8 \u547c\u5438\u6cd5\uff0c\u505a 4 \u56de\u5408\u3002" },
+  { id: "leave", image: "assets/icons/action-leave.svg", title: "\u96e2\u958b\u73fe\u5834", desc: "\u7acb\u523b\u96e2\u958b\u623f\u9593\uff0c\u8d70\u5230\u5ba2\u5ef3\u3001\u967d\u53f0\u6216\u5ba4\u5916\u3002" },
+  { id: "cold_water", image: "assets/icons/action-cold.svg", title: "\u51b7\u6c34\u91cd\u7f6e", desc: "\u7528\u51b7\u6c34\u6d17\u81c9 30 \u79d2\uff0c\u8b93\u5927\u8166\u5148\u505c\u4e0b\u4f86\u3002" },
+  { id: "write", image: "assets/icons/icon-reason.svg", title: "\u5beb\u4e0b\u73fe\u5728", desc: "\u5beb\u4e00\u53e5\u8a71\uff1a\u6211\u73fe\u5728\u60f3\u7834\u6212\uff0c\u56e0\u70ba____\u3002" },
+  { id: "commitment", image: "assets/icons/feature-standard.svg", title: "\u91cd\u8b80\u627f\u8afe", desc: "\u6211\u4e0d\u9700\u8981\u8ddf\u885d\u52d5\u8faf\u8ad6\u3002\u6211\u53ea\u9700\u8981\u5ef6\u5f8c 90 \u79d2\u3002" }
 ];
 
 const defaultState = {
@@ -325,7 +325,7 @@ function renderActions() {
   document.querySelector("#actionGrid").innerHTML = rescueActions
     .map((action) => `
       <button class="action-card ${selectedActionId === action.id ? "selected" : ""}" data-action="${action.id}">
-        <span class="action-visual"><img src="${action.image}" alt="" loading="lazy"></span>
+        <span class="action-icon-frame"><span class="action-icon icon-mask" style="--icon: url('${action.image}')" aria-hidden="true"></span></span>
         <strong>${action.title}</strong>
         <small>${action.desc}</small>
       </button>

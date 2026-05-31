@@ -9,10 +9,10 @@
     <meta name="apple-mobile-web-app-title" content="SIGMAN" />
     <meta name="description" content="SIGMAN 自律掌控系統" />
     <title>SIGMAN App</title>
-    <link rel="manifest" href="manifest.json?v=10" />
+    <link rel="manifest" href="manifest.json?v=11" />
     <link rel="apple-touch-icon" href="assets/icon-180.png" />
     <link rel="icon" href="assets/icon-192.png" />
-    <link rel="stylesheet" href="styles.css?v=10" />
+    <link rel="stylesheet" href="styles.css?v=11" />
   </head>
   <body>
     <main class="phone-shell" aria-label="SIGMAN MVP">
@@ -27,16 +27,21 @@
 
       <section class="screen app-screen" data-screen="home">
         <header class="topbar">
-          <div>
-            <span class="eyebrow">掌控中心</span>
-            <h2>SIGMAN</h2>
+          <div class="topbar-title">
+            <span class="feature-icon small icon-mask" style="--icon: url('assets/icons/icon-dashboard.svg')" aria-hidden="true"></span>
+            <div>
+              <span class="eyebrow">掌控中心</span>
+              <h2>SIGMAN</h2>
+            </div>
           </div>
-          <button class="icon-btn" data-go="setup" data-nav="setup" aria-label="Settings">&#9881;</button>
+          <button class="icon-btn" data-go="setup" data-nav="setup" aria-label="Settings">
+            <span class="nav-icon icon-mask" style="--icon: url('assets/icons/nav-setup.svg')" aria-hidden="true"></span>
+          </button>
         </header>
 
         <div class="content home-content">
           <section class="streak-hero">
-            <img class="hero-sigil" src="assets/brand/sigma-shield.svg" alt="" />
+            <span class="hero-sigil icon-mask" style="--icon: url('assets/icons/icon-streak.svg')" aria-hidden="true"></span>
             <span class="eyebrow">紀律儀表板</span>
             <div class="day-number">
               <strong id="streakDays">1</strong>
@@ -50,8 +55,11 @@
           </section>
 
           <button class="reason-card" data-go="setup" data-nav="setup">
-            <span class="eyebrow">&#25105;&#30340;&#29702;&#30001;</span>
-            <strong id="reasonLabel">&#35373;&#23450;&#19968;&#20491;&#20320;&#19981;&#24819;&#20013;&#26039;&#32000;&#37636;&#30340;&#29702;&#30001;&#12290;</strong>
+            <span class="feature-icon small icon-mask" style="--icon: url('assets/icons/icon-reason.svg')" aria-hidden="true"></span>
+            <span>
+              <span class="eyebrow">我的理由</span>
+              <strong id="reasonLabel">&#35373;&#23450;&#19968;&#20491;&#20320;&#19981;&#24819;&#20013;&#26039;&#32000;&#37636;&#30340;&#29702;&#30001;&#12290;</strong>
+            </span>
           </button>
 
           <section class="rescue-strip priority">
@@ -88,7 +96,7 @@
 
         <div class="content rescue-content">
           <section class="timer-card" id="timerCard">
-            <img class="timer-sigil" src="assets/brand/sigma-shield.svg" alt="" />
+            <span class="timer-sigil icon-mask" style="--icon: url('assets/icons/feature-protocol.svg')" aria-hidden="true"></span>
             <span class="eyebrow">90 秒控制協定</span>
             <div class="timer" id="timer">90</div>
             <span class="timer-unit">&#31186;</span>
@@ -154,12 +162,12 @@
       </section>
 
       <nav class="bottom-nav" hidden>
-        <button class="active" data-go="home" data-nav="home"><span>&#8962;</span>&#39318;&#38913;</button>
-        <button data-go="rescue" data-nav="rescue"><span>&#9889;</span>&#24613;&#25937;</button>
-        <button data-go="setup" data-nav="setup"><span>&#9881;</span>&#35373;&#23450;</button>
+        <button class="active" data-go="home" data-nav="home"><span class="nav-icon icon-mask" style="--icon: url('assets/icons/nav-home.svg')" aria-hidden="true"></span>首頁</button>
+        <button data-go="rescue" data-nav="rescue"><span class="nav-icon icon-mask" style="--icon: url('assets/icons/nav-rescue.svg')" aria-hidden="true"></span>急救</button>
+        <button data-go="setup" data-nav="setup"><span class="nav-icon icon-mask" style="--icon: url('assets/icons/nav-setup.svg')" aria-hidden="true"></span>設定</button>
       </nav>
     </main>
 
-    <script src="app.js?v=10"></script>
+    <script src="app.js?v=11"></script>
   </body>
 </html>
